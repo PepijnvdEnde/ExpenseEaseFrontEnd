@@ -1,15 +1,24 @@
 import { Component } from 'react';
+import NavbarButton  from './Navbar-Components/NavbarButton.jsx';
 
-class NavBar extends Component {
+class Navbar extends Component {
     render() {
         return (
-        <nav className="sticky top-0 h-16 w-screen bg-[#0E2954] text-[#82B1FF]  flex items-center justify-around box-content border-b-2 border-[#3A1078]" role="navigation">
-            <a href="/" className="p-2 ml-6 border-[#82B1FF] border-2 rounded ">Logo</a>
-            <div className="p-2 mr-2 border-[#82B1FF] border-2 rounded ">Menu</div>
-        </nav>
-        
+            <nav className="sticky top-0 h-16  w-screen bg-sky-950 text-indigo-600 flex items-center justify-between border-r-2 border-indigo-600">
+                <div className='flex items-center justify-between m-2'>
+                    <NavbarButton name="Dashboard" link="Dashboard" />
+                    <NavbarButton name="Add Expense" link="Addfunds" />
+                    <NavbarButton name="Manage Expenses" link="Managefunds" />
+                    <NavbarButton name="Categories" link="Catagories" />
+                    <NavbarButton name="Reports" link="Reports" />
+                </div>
+                <div className='flex items-center justify-between right-0 m-3'>
+                    <NavbarButton name="Account Settings" link="Settings" />
+                    <NavbarButton name="Logout" link="Logout" />
+                </div>
+            </nav>
         );
     }
 }
 
-export default NavBar;
+export default Navbar;
