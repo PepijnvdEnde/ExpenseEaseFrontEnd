@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-class LoginPage extends Component {
+class Registration extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,12 +11,12 @@ class LoginPage extends Component {
     }
 
 
-    getLogin = async (username, password) => {
+    sendRegistration = async (username, password) => {
         let data = {
             username: username,
             password: password,
         };
-        const response = await fetch("http://localhost:8080/Login", {
+        const response = await fetch("http://localhost:8080/Register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -25,13 +25,13 @@ class LoginPage extends Component {
         return response;
     };
 
-    handleLogin = async () => {
+    handleRegistration = async () => {
         if (this.state.username === "" || this.state.password === "") {
             alert("Username or Password cannot be empty");
             return;
         }
 
-        let response = await this.getLogin(this.state.username, this.state.password);
+        let response = await this.sendRegistration(this.state.username, this.state.password);
 
         if (response.ok) {
             window.location.href = "/Dashboard";
@@ -54,32 +54,39 @@ class LoginPage extends Component {
     render() {
         const handleKeyPress = (event) => {
             if (event.key === "Enter") {
-                this.handleLogin();
+                this.handleRegistration();
             }
         };
 
         return (
+
             <div className="w-screen min-h-screen bg-gray-600 flex justify-center items-center">
                 <div className="w-1/2 bg-indigo-600 rounded-lg p-10">
-                    <h1 className="text-4xl text-center text-white mb-4">Login</h1>
+              
+                        <Link to="/Login" className="text-white text-xl">
+                            &larr; Back to Login
+                        </Link>
+                        <h1 className="text-4xl text-center text-white mb-4">Register</h1>
+
                     <div className="grid grid-cols-1 gap-y-4">
+
                         <div>
-                            <label className="text-white block mb-2" htmlFor="username">Username</label>
+                            <label className="text-white  mb-2" htmlFor="username">Username</label>
                             <input
                                 id="username"
-                                className=" w-full p-2"
-                                placeholder="Username"
+                                className="rounded-md w-full p-2"
                                 type="text"
+                                placeholder="Enter your username"
                                 onChange={this.handleUsername}
                                 onKeyDown={handleKeyPress}
                             />
                         </div>
                         <div>
-                            <label className="text-white block mb-2" htmlFor="password">Password</label>
+                            <label className="text-white  mb-2" htmlFor="password">Password</label>
                             <input
                                 id="password"
-                                className=" w-full p-2"
-                                placeholder="Password"
+                                className="rounded-md w-full p-2"
+                                placeholder="Enter your password"
                                 type="password"
                                 onChange={this.handlePassword}
                                 onKeyDown={handleKeyPress}
@@ -87,15 +94,12 @@ class LoginPage extends Component {
                         </div>
                         <div>
                             <button
-                                className="bg-blue-500  text-white w-full p-2"
+                                className="bg-blue-500 rounded-md text-white w-full p-2"
                                 type="button"
-                                onClick={this.handleLogin}
+                                onClick={this.handleRegistration}
                             >
-                                Login
+                                Register
                             </button>
-                        </div>
-                        <div className="text-center text-white">
-                            Don't have an account? <Link to="/Register">Register new account</Link>
                         </div>
                     </div>
                 </div>
@@ -103,7 +107,7 @@ class LoginPage extends Component {
         );
 
     }
-      
+
 }
 
-export default LoginPage;
+export default Registration;

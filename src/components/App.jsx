@@ -1,19 +1,24 @@
-import React from "react";
+import { Component } from "react";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Homepage";
 import LoginPage from "./Loginpage";
+import Registration from "./Registration";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/Dashboard" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Dashboard" element={<HomePage />} />
+          <Route path="/Register" element={<Registration />} />
+          <Route path="/Login" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
