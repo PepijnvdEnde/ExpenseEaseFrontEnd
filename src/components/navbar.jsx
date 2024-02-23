@@ -14,7 +14,7 @@ class Navbar extends Component {
                 </div>
                 <div className='flex items-center justify-between right-0 m-3'>
                     <NavbarButton name="Account Settings" link="Settings" />
-                    <NavbarButton name="Logout" link="Logout" />
+                    <NavbarButton name="Logout" link="Login" />
                 </div>
             </nav>
         );
