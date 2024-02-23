@@ -9,6 +9,7 @@ class DashboardPage extends Component {
                 <div className="w-screen min-h-screen bg-gray-600 flex justify-center pt-2">
                     <div className="w-3/4 bg-indigo-600 rounded-lg pl-10 pt-10 ">
                         <h1 className="text-4xl text-left text-white  text-center">Dashboard</h1>
+                        <h2 className="text-center text-white mb-4">{localStorage.getItem('jwtToken')}</h2>
                     </div>
                 </div>
             </>
