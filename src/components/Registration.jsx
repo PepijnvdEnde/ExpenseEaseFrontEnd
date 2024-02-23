@@ -10,7 +10,6 @@ class Registration extends Component {
         };
     }
 
-
     sendRegistration = async (username, password) => {
         let data = {
             username: username,
@@ -59,15 +58,12 @@ class Registration extends Component {
         };
 
         return (
-
             <div className="w-screen min-h-screen bg-gray-600 flex justify-center items-center">
                 <div className="w-1/2 bg-indigo-600 rounded-lg p-10">
-              
-                        <Link to="/Login" className="text-white text-xl">
-                            &larr; Back to Login
-                        </Link>
-                        <h1 className="text-4xl text-center text-white mb-4">Register</h1>
-
+                    <Link to="/Login" className="text-white text-xl">
+                        &larr; Back to Login
+                    </Link>
+                    <h1 className="text-4xl text-center text-white mb-4">Register</h1>
                     <div className="grid grid-cols-1 gap-y-4">
 
                         <div>
@@ -105,9 +101,7 @@ class Registration extends Component {
                 </div>
             </div>
         );
-
     }
-
 }
 
 export default Registration;
