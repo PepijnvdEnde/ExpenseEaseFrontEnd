@@ -9,7 +9,7 @@ class LoginPage extends Component {
             password: "",
         };
     }
-
+    
 
     getLogin = async (username, password) => {
         let data = {
@@ -34,7 +34,10 @@ class LoginPage extends Component {
         let response = await this.getLogin(this.state.username, this.state.password);
 
         if (response.ok) {
-            window.location.href = "/Dashboard";
+            const JwtToken = await response.text();
+            localStorage.setItem('jwtToken', JwtToken);
+            localStorage.setItem('username', this.state.username);
+           window.location.href = "/Dashboard";
         } else {
             const errorMessage = await response.text();
             console.error(errorMessage);
@@ -103,7 +106,7 @@ class LoginPage extends Component {
         );
 
     }
-      
+
 }
 
 export default LoginPage;
