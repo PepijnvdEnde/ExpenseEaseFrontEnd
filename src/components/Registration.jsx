@@ -33,6 +33,9 @@ class Registration extends Component {
         let response = await this.sendRegistration(this.state.username, this.state.password);
 
         if (response.ok) {
+            const JwtToken = await response.text();
+            localStorage.setItem('jwtToken', JwtToken);
+            localStorage.setItem('username', this.state.username);
             window.location.href = "/Dashboard";
         } else {
             const errorMessage = await response.text();
