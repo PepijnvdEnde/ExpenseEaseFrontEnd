@@ -36,6 +36,7 @@ class LoginPage extends Component {
         if (response.ok) {
             const JwtToken = await response.text();
             localStorage.setItem('jwtToken', JwtToken);
+            localStorage.setItem('username', this.state.username);
            window.location.href = "/Dashboard";
         } else {
             const errorMessage = await response.text();
@@ -64,7 +65,6 @@ class LoginPage extends Component {
             <div className="w-screen min-h-screen bg-gray-600 flex justify-center items-center">
                 <div className="w-1/2 bg-indigo-600 rounded-lg p-10">
                     <h1 className="text-4xl text-center text-white mb-4">Login</h1>
-                    
                     <div className="grid grid-cols-1 gap-y-4">
                         <div>
                             <label className="text-white block mb-2" htmlFor="username">Username</label>

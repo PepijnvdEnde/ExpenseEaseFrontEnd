@@ -13,6 +13,10 @@ class Navbar extends Component {
                     <NavbarButton name="Reports" link="Reports" />
                 </div>
                 <div className='flex items-center justify-between right-0 m-3'>
+                    <div className="p-2 mr-2 w-max border-indigo-600 border-2 rounded text-center my-2 bg-indigo-600 text-white"> 
+                    {localStorage.getItem('username')}
+                    </div>
+
                     <NavbarButton name="Account Settings" link="Settings" />
                     <NavbarButton name="Logout" link="Login" />
                 </div>
