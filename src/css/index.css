@@ -16,3 +16,23 @@ input[type='number'] {
     -webkit-appearance: none;
     margin: 0;
   }
+  .button-3d {
+    position: relative;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.25);
+}
+
+.button-3d:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.button-3d:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transform: translateY(2px);
+    transition: all 0.1s ease-in-out;
+}
+
+.active {
+  transform: translateY(3px);
+}

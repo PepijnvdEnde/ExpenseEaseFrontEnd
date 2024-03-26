@@ -1,16 +1,11 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-class Registration extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: "",
-            password: "",
-        };
-    }
+const Registration = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    sendRegistration = async (username, password) => {
+    const sendRegistration = async (username, password) => {
         let data = {
             username: username,
             password: password,
@@ -24,18 +19,18 @@ class Registration extends Component {
         return response;
     };
 
-    handleRegistration = async () => {
-        if (this.state.username === "" || this.state.password === "") {
+    const handleRegistration = async () => {
+        if (username === "" || password === "") {
             alert("Username or Password cannot be empty");
             return;
         }
 
-        let response = await this.sendRegistration(this.state.username, this.state.password);
+        let response = await sendRegistration(username, password);
 
         if (response.ok) {
             const JwtToken = await response.text();
             localStorage.setItem('jwtToken', JwtToken);
-            localStorage.setItem('username', this.state.username);
+            localStorage.setItem('username', username);
             window.location.href = "/Dashboard";
         } else {
             const errorMessage = await response.text();
@@ -44,67 +39,57 @@ class Registration extends Component {
         }
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            handleRegistration();
+        }
+    };
 
-    handleUsername = (event) => {
-        this.setState({ username: event.target.value });
-    }
+    return (
+        <div className="w-screen min-h-screen bg-white flex justify-center items-center">
+            <div className="w-1/3 bg-white border-2 border-black rounded-lg p-10  text-left">
+                <Link to="/Login" className="text-black text-lg text-top mb-4">
+                    &larr; Back
+                </Link>
+                <h1 className="text-4xl text-center text-black mb-4">Register</h1>
 
-    handlePassword = (event) => {
-        this.setState({ password: event.target.value });
-    }
+                <div className="grid grid-cols-1 gap-y-4 text-left">
 
-    render() {
-        const handleKeyPress = (event) => {
-            if (event.key === "Enter") {
-                this.handleRegistration();
-            }
-        };
-
-        return (
-            <div className="w-screen min-h-screen bg-gray-600 flex justify-center items-center">
-                <div className="w-1/2 bg-indigo-600 rounded-lg p-10">
-                    <Link to="/Login" className="text-white text-xl">
-                        &larr; Back to Login
-                    </Link>
-                    <h1 className="text-4xl text-center text-white mb-4">Register</h1>
-                    <div className="grid grid-cols-1 gap-y-4">
-
-                        <div>
-                            <label className="text-white  mb-2" htmlFor="username">Username</label>
-                            <input
-                                id="username"
-                                className="rounded-md w-full p-2"
-                                type="text"
-                                placeholder="Enter your username"
-                                onChange={this.handleUsername}
-                                onKeyDown={handleKeyPress}
-                            />
-                        </div>
-                        <div>
-                            <label className="text-white  mb-2" htmlFor="password">Password</label>
-                            <input
-                                id="password"
-                                className="rounded-md w-full p-2"
-                                placeholder="Enter your password"
-                                type="password"
-                                onChange={this.handlePassword}
-                                onKeyDown={handleKeyPress}
-                            />
-                        </div>
-                        <div>
-                            <button
-                                className="bg-blue-500 rounded-md text-white w-full p-2"
-                                type="button"
-                                onClick={this.handleRegistration}
-                            >
-                                Register
-                            </button>
-                        </div>
+                    <div>
+                        <label className="text-black  mb-2" htmlFor="username">Username</label>
+                        <input
+                            id="username"
+                            className="rounded-md w-full p-2 border-2 border-black"
+                            type="text"
+                            placeholder="Enter your username"
+                            onChange={(e) => setUsername(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                        />
+                    </div>
+                    <div>
+                        <label className="text-black mb-2" htmlFor="password">Password</label>
+                        <input
+                            id="password"
+                            className="rounded-md w-full p-2 border-2 border-black"
+                            placeholder="Enter your password"
+                            type="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                        />
+                    </div>
+                    <div>
+                        <button
+                            className="bg-white border-2 border-blue-700 rounded-md text-blue-700 w-full p-2 button-3d"
+                            type="button"
+                            onClick={handleRegistration}
+                        >
+                            Register
+                        </button>
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Registration;
