@@ -6,7 +6,6 @@ import LoginPage from "./Login";
 import Registration from "./Registration";
 import AddExpensePage from "./AddExpense";
 import ManageExpensesPage from "./ManageExpenses";
-import CatagoriesPage from "./Catagories";
 import ReportsPage from "./Reports";
 import SettingsPage from "./Settings";
 
@@ -20,7 +19,6 @@ const App = () => {
               <Route path="/Login" element={<LoginPage />} />
               <Route path="/AddExpense" element={<AddExpensePage />} />
               <Route path="/ManageExpenses" element={<ManageExpensesPage />} />
-              <Route path="/Catagories" element={<CatagoriesPage />} />
               <Route path="/Reports" element={<ReportsPage />} />
               <Route path="/Settings" element={<SettingsPage />} />
           </Routes>
