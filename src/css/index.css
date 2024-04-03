@@ -24,7 +24,8 @@ input[type='number'] {
 
 .button-3d:active {
     transform: translateY(3px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
 .button-3d:hover {
@@ -33,6 +34,18 @@ input[type='number'] {
     transition: all 0.1s ease-in-out;
 }
 
+.button-3d {
+    transform: translateY(3px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
 .active {
   transform: translateY(3px);
 }
+
+.tabHover:hover {
+  transition: all 0.1s ease-in-out;
+  border: 2px solid #000;
+}
+
+

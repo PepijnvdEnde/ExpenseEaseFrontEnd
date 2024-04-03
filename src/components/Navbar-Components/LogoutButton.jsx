@@ -9,7 +9,7 @@ const LogoutButton = () => {
     }
 
     return (
-        <button onClick={handleLogout} className="p-2 mr-2 w-max text-center my-2 bg-white border-2 border-black text-black cursor-pointer button-3d">
+        <button onClick={handleLogout} className="p-2 mr-2 w-max text-center my-2 bg-white border-2 border-gray-300 rounded-lg text-black cursor-pointer button-3d shadow-md">
             Logout
         </button >
     );

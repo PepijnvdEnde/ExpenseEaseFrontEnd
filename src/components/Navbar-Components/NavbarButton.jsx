@@ -10,8 +10,8 @@ function NavbarButton({ name, link }) {
     }, [location.pathname, link]);
 
     const buttonClass = isActive 
-        ? "p-2 mr-2 w-max text-center my-2 bg-white border-2  border-black text-black cursor-pointer button-3d active" 
-        : "p-2 mr-2 w-max text-center my-2 bg-white border-2  border-black text-black cursor-pointer button-3d";
+        ? "p-2 mr-2 w-max text-center my-2 bg-white border-2 rounded-lg border-gray-300 text-black cursor-pointer button-3d active shadow-md" 
+        : "p-2 mr-2 w-max text-center my-2 bg-white border-2 rounded-lg border-gray-300 text-black cursor-pointer button-3d shadow-md";
 
     return (
         <Link to={`/${link}`} className={buttonClass}>
