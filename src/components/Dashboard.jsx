@@ -54,7 +54,7 @@ const DashboardPage = () => {
                         <Link to="/" className="w-max h-min border-2 border-gray-300 rounded-lg flex justify-center items-center text-2xl p-3 button-3d shadow-md">Manage income</Link>
                     </div>
                 </div>
-                <div className="w-3/4 p-3 mb-3 flex justify-evenly items-center">
+                <div className="w-3/4 p-3 flex justify-evenly items-center">
                     <TotalExpenses />
 
                     <TotalIncome />
