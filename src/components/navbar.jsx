@@ -4,7 +4,7 @@ import LogoutButton from './Navbar-Components/LogoutButton.jsx';
 
 const Navbar = () => {
     return (
-        <nav className="sticky top-0 z-10 h-16 w-screen bg-white text-black flex items-center justify-between border-b-2 border-gray-300 shadow-md navbar">
+        <nav className="sticky top-0 z-10 h-16 w-screen bg-white/100 text-black flex items-center justify-between border-b-2 border-gray-300 shadow-md navbar">
             <div className='flex items-center justify-between m-2'>
                 <NavbarButton name="Dashboard" link="Dashboard" />
             </div>

@@ -15,7 +15,7 @@ const EditExpenseRow = ({ amount, description, catagory, date }) => {
     return (<>
         <div className="text-center text-xl border-2 border-gray-300 hover:border-gray-500 h-10 flex justify-between my-1 cursor-pointer rounded-lg"
             onClick={() => setShowModal(true)}>
-            <div className="text-left border-r-2 border-gray-300 px-4 w-28 flex-shrink-0">€{amount}</div>
+            <div className="text-left border-r-2 border-gray-300 px-4 w-32 flex-shrink-0">- €{amount}</div>
             <div className="text-left flex-grow pl-2 overflow-hidden">{description}</div>
             <div className="text-left pl-2 overflow-hidden flex-shrink-0 border-l-2 border-gray-300 max-w-36 w-36">{catagory}</div>
             <div className="border-l-2 border-gray-300 px-4 w-36 flex-shrink-0">{date}</div>
@@ -28,8 +28,8 @@ const EditExpenseRow = ({ amount, description, catagory, date }) => {
             ariaHideApp={false}
             onRequestClose={() => setShowModal(false)}
         >
-            <div className="w-1/2 min-w-fit max-w-1/2 bg-white border-2 border-gray-300 p-5 grid grid-rows-auto h-min mb-3 rounded-lg fixed top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
-                <div className="absolute -top-10 left-1 flex bg-white border-t-2 border-x-2 px-3 rounded-t-lg border-gray-300 w-36 h-10">
+            <div className="w-1/2 min-w-fit max-w-1/2 bg-white/100 border-2 border-gray-300 p-5 grid grid-rows-auto h-min mb-3 rounded-lg fixed top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
+                <div className="relative -top-16 left-1 flex bg-white/100 border-t-2 border-x-2 px-3 rounded-t-lg border-gray-300 w-36 h-11">
                     <h1 className="text-xl text-left text-black">Edit Expense</h1>
                 </div>
                 <div className="text-center text-xl border-2 border-gray-400 h-10 flex justify-around my-1 rounded-lg">
@@ -43,7 +43,7 @@ const EditExpenseRow = ({ amount, description, catagory, date }) => {
                         <input type="text" pattern="\d+,\d{2}" placeholder={"€" + amount} className="border-r-2 border-gray-300 px-4 w-28 flex-shrink-0 rounded-l-lg" />
                         <input type="text" placeholder={description} className="text-left flex-grow pl-2 overflow-hidden" />
 
-                        <select defaultValue={catagory} className="border-l-2 border-gray-300 bg-white px-4 w-36 flex-shrink-0 text left" >
+                        <select defaultValue={catagory} className="border-l-2 border-gray-300 px-4 w-36 flex-shrink-0 text left" >
                             <option value="Food">Food</option>
                             <option value="Transportation">Transportation</option>
                             <option value="Groceries">Groceries</option>

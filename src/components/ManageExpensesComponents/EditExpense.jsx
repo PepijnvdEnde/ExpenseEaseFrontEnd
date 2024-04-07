@@ -25,7 +25,7 @@ const EditExpense = () => {
             <EditExpenseRow amount="109,29" description="Auto vergoeding" catagory="Insurance" date="10-12-2024" />
             <EditExpenseRow amount="2523,98" description="Studiegeld" catagory="Education" date="15-01-2025" />
             <EditExpenseRow amount="100,00" description="Team seas" catagory="Gifts" date="20-02-2025" />
-            <EditExpenseRow amount="50,0" description="Reddit aandelen" catagory="Investments" date="25-03-2025" />
+            <EditExpenseRow amount="50,00" description="Reddit aandelen" catagory="Investments" date="25-03-2025" />
         </div>
     </>
     );

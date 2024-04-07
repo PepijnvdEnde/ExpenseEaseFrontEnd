@@ -6,7 +6,6 @@ import TotalIncome from './Dashboard-Components/DBTotalIncome';
 import CategoryExpenses from './Dashboard-Components/DBCategoryExpenses';
 import BugetOverview from './Dashboard-Components/DBBugetOverview';
 import ExpensesHistory from './Dashboard-Components/ExpenseHistory';
-import ManageIncomeModal from './DBButtons/ManageIncome';
 import ManageBudgetsModal from './DBButtons/ManageBudgets';
 
 
@@ -51,7 +50,6 @@ const DashboardPage = () => {
                     </div>
                     <div className="flex justify-evenly items-center p-2 h-min">
                         <ManageExpenseModal />
-                        <ManageIncomeModal />
                         <ManageBudgetsModal />
                     </div>
                 </div>
