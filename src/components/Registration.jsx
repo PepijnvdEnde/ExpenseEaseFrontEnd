@@ -47,7 +47,7 @@ const Registration = () => {
 
     return (
         <div className="w-screen min-h-screen bg-white flex justify-center items-center">
-            <div className="w-1/3 bg-white border-2 border-black rounded-lg p-10  text-left">
+            <div className="w-1/3 bg-white border-2 border-gray-300 rounded-lg p-10  text-left">
                 <Link to="/Login" className="text-black text-lg text-top mb-4">
                     &larr; Back
                 </Link>
@@ -59,7 +59,7 @@ const Registration = () => {
                         <label className="text-black  mb-2" htmlFor="username">Username</label>
                         <input
                             id="username"
-                            className="rounded-md w-full p-2 border-2 border-black"
+                            className="rounded-md w-full p-2 border-2 border-gray-300"
                             type="text"
                             placeholder="Enter your username"
                             onChange={(e) => setUsername(e.target.value)}
@@ -70,7 +70,7 @@ const Registration = () => {
                         <label className="text-black mb-2" htmlFor="password">Password</label>
                         <input
                             id="password"
-                            className="rounded-md w-full p-2 border-2 border-black"
+                            className="rounded-md w-full p-2 border-2 border-gray-300"
                             placeholder="Enter your password"
                             type="password"
                             onChange={(e) => setPassword(e.target.value)}

@@ -55,14 +55,14 @@ const LoginPage = () => {
 
     return (
         <div className="w-screen min-h-screen bg-white flex justify-center items-center" onKeyDown={handleKeyPress}>
-            <div className="w-1/3 bg-white border-2 border-black rounded-lg p-10">
+            <div className="w-1/3 bg-white border-2 border-gray-300 rounded-lg p-10">
                 <h1 className="text-4xl text-center text-black mb-4">Login</h1>
                 <div className="grid grid-cols-1 gap-y-4">
                     <div>
                         <label className="text-black block mb-2" htmlFor="username">Username</label>
                         <input
                             id="username"
-                            className=" w-full p-2 border-2 border-black rounded-md text-black"
+                            className=" w-full p-2 border-2 border-gray-300 rounded-md text-black"
                             placeholder="Username"
                             type="text"
                             onChange={handleUsername}
@@ -72,7 +72,7 @@ const LoginPage = () => {
                         <label className="text-black block mb-2" htmlFor="password">Password</label>
                         <input
                             id="password"
-                            className=" w-full p-2 border-2 border-black rounded-md"
+                            className=" w-full p-2 border-2 border-gray-300 rounded-md"
                             placeholder="Password"
                             type="password"
                             onChange={handlePassword}

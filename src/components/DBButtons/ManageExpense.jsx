@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import ReactModal from "react-modal";
-import AddExpense from './EditExpensesComponents/AddExpense';
-import EditExpense from './EditExpensesComponents/EditExpense';
+import AddExpense from '../EditExpensesComponents/AddExpense';
+import EditExpense from '../EditExpensesComponents/EditExpense';
 
 const ManageExpenseModal = () => {
     const [showModal, setShowModal] = useState(false);
@@ -17,7 +17,7 @@ const ManageExpenseModal = () => {
 
     return (
         <>
-            <div className='w-max h-min border-2 border-gray-300 flex justify-center rounded-lg items-center text-2xl p-3 button-3d' onClick={() => setShowModal(true)}>Manage Expense</div>
+            <div className='w-max h-min border-2 border-gray-300 flex justify-center rounded-lg items-center text-2xl p-3 button-3d' onClick={() => setShowModal(true)}>Manage Expenses</div>
             <ReactModal
                 isOpen={showModal}
                 contentLabel="School toevoegen Modal"

@@ -1,11 +1,13 @@
 import { useEffect } from 'react'; //useState,
-import { Link } from 'react-router-dom';
 import Navbar from './navbar';
-import ManageExpenseModal from './ManageExpense';
+import ManageExpenseModal from './DBButtons/ManageExpense';
 import TotalExpenses from './Dashboard-Components/DBTotalExpenses';
 import TotalIncome from './Dashboard-Components/DBTotalIncome';
 import CategoryExpenses from './Dashboard-Components/DBCategoryExpenses';
 import BugetOverview from './Dashboard-Components/DBBugetOverview';
+import ExpensesHistory from './Dashboard-Components/ExpenseHistory';
+import ManageIncomeModal from './DBButtons/ManageIncome';
+import ManageBudgetsModal from './DBButtons/ManageBudgets';
 
 
 const DashboardPage = () => {
@@ -49,9 +51,8 @@ const DashboardPage = () => {
                     </div>
                     <div className="flex justify-evenly items-center p-2 h-min">
                         <ManageExpenseModal />
-                        <Link to="/" className="w-max h-min border-2 border-gray-300 rounded-lg flex justify-center items-center text-2xl p-3 button-3d shadow-md">Manage categories</Link>
-                        <Link to="/" className="w-max h-min border-2 border-gray-300 rounded-lg flex justify-center items-center text-2xl p-3 button-3d shadow-md">Manage budgets</Link>
-                        <Link to="/" className="w-max h-min border-2 border-gray-300 rounded-lg flex justify-center items-center text-2xl p-3 button-3d shadow-md">Manage income</Link>
+                        <ManageIncomeModal />
+                        <ManageBudgetsModal />
                     </div>
                 </div>
                 <div className="w-3/4 p-3 flex justify-evenly items-center">
@@ -64,6 +65,11 @@ const DashboardPage = () => {
                     <CategoryExpenses />
 
                     <BugetOverview />
+
+                </div>
+                <div className="w-3/4 p-3 mb-3 flex justify-evenly">
+
+                    <ExpensesHistory />
 
                 </div>
             </div>

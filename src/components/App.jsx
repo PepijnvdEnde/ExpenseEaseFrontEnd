@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardPage from "./Dashboard";
 import LoginPage from "./Login";
 import Registration from "./Registration";
-import ReportsPage from "./Reports";
 import SettingsPage from "./Settings";
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
               <Route path="/Dashboard" element={<DashboardPage />} />
               <Route path="/Register" element={<Registration />} />
               <Route path="/Login" element={<LoginPage />} />
-              <Route path="/Reports" element={<ReportsPage />} />
               <Route path="/Settings" element={<SettingsPage />} />
           </Routes>
       </BrowserRouter>

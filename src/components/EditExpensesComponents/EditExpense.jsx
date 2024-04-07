@@ -4,7 +4,7 @@ import EditExpenseRow from './EditExpenseRow';
 const EditExpense = () => {
     return (<>
         <div className="flex justify-center items-center border-2 border-blue-700 rounded-lg h-20">
-            <p className="text-4xl text-blue-700">Edit Expense</p>
+            <p className="text-4xl text-blue-700">Edit Expenses</p>
         </div>
         <div className="text-center text-xl border-2 border-gray-400 h-10 flex justify-around my-1 rounded-lg">
             <div className="border-r-2 border-gray-300 px-4 w-28 flex-shrink-0">Amount</div>
