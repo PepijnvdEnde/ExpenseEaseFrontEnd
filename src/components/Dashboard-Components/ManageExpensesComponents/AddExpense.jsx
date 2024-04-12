@@ -1,6 +1,4 @@
 const AddExpense = () => {
-
-
     return (<>
         <div className="flex justify-center items-center border-2 border-blue-700 rounded-lg h-20">
             <p className="text-4xl text-blue-700">Add Expense</p>

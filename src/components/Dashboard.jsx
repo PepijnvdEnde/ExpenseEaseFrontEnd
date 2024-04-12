@@ -1,12 +1,12 @@
 import { useEffect } from 'react'; //useState,
 import Navbar from './navbar';
-import ManageExpenseModal from './DBButtons/ManageExpense';
+import ManageExpenseModal from './Dashboard-Components/DBButtons/ManageExpense';
 import TotalExpenses from './Dashboard-Components/DBTotalExpenses';
 import TotalIncome from './Dashboard-Components/DBTotalIncome';
 import CategoryExpenses from './Dashboard-Components/DBCategoryExpenses';
 import BugetOverview from './Dashboard-Components/DBBugetOverview';
 import ExpensesHistory from './Dashboard-Components/ExpenseHistory';
-import ManageBudgetsModal from './DBButtons/ManageBudgets';
+import ManageBudgetsModal from './Dashboard-Components/DBButtons/ManageBudgets';
 
 
 const DashboardPage = () => {
