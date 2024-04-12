@@ -2,6 +2,8 @@ import { useState, useEffect} from 'react';
 import ReactModal from "react-modal";
 import AddExpense from '../ManageExpensesComponents/AddExpense';
 import EditExpense from '../ManageExpensesComponents/EditExpense';
+import AddIncome from '../ManageExpensesComponents/AddIncome';
+import EditIncomes from '../ManageExpensesComponents/EditIncomes';
 
 const ManageExpenseModal = () => {
     const [showModal, setShowModal] = useState(false);
@@ -35,11 +37,24 @@ const ManageExpenseModal = () => {
                             <button onClick={() => setTab('AddExpenseTab')}>Add expense</button>
                         </div>
                         <div className="relative bg-white/100  w-44 h-11 text-center rounded-t-lg border-x-2 border-t-2 border-gray-300 text-xl box-border truncate"
+                            style={tab === 'AddIncomeTab' ? {} : { borderBottom: '2px solid #d1d5db'}}>
+                            <button onClick={() => setTab('AddIncomeTab')}>Add income</button>
+                        </div>
+                        <div className="relative bg-white/100  w-44 h-11 text-center rounded-t-lg border-x-2 border-t-2 border-gray-300 text-xl box-border truncate"
                             style={tab === 'EditExpenseTab' ? {} : { borderBottom: '2px solid #d1d5db'}}>
                             <button onClick={() => setTab('EditExpenseTab')}>Edit expenses</button>
                         </div>
+                        <div className="relative bg-white/100  w-44 h-11 text-center rounded-t-lg border-x-2 border-t-2 border-gray-300 text-xl box-border truncate"
+                            style={tab === 'EditIncomesTab' ? {} : { borderBottom: '2px solid #d1d5db'}}>
+                            <button onClick={() => setTab('EditIncomesTab')}>Edit incomes</button>
+                        </div>
                     </div>
-                    {tab === 'AddExpenseTab' ? <AddExpense /> : <EditExpense />}
+                    {tab === 'AddExpenseTab' && <AddExpense />}
+                    {tab === 'EditExpenseTab' && <EditExpense />}
+                    {tab === 'AddIncomeTab' && <AddIncome />}
+                    {tab === 'EditIncomesTab' && <EditIncomes />}
+                
+        
                     <div className="flex justify-evenly  p-2 h-min button-3d border-2  border-gray-300 rounded-lg" onClick={() => setShowModal(false)}>
                     <p>Close</p>
                 </div>
